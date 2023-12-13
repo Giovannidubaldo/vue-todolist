@@ -16,6 +16,7 @@ img{
 }
 
 /* Main */
+
 main{
     background-color: green;
     height: calc(100vh - 75px);
@@ -30,4 +31,10 @@ main{
 li{
     padding: 10px 0;
     border-bottom: 1px solid grey;
+}
+
+/* Utility */
+
+.cursor-pointer{
+    cursor: pointer;
 }

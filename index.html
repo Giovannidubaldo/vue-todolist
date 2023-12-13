@@ -41,13 +41,16 @@
                                 <!-- Ciclo l'array di oggetti per stampare la lista -->
                                 <li v-for="(film, index) in todo_list" :key="index" :class="film.done == true ? 'text-decoration-line-through text-danger' : ''">
                                     <div class="d-flex justify-content-between">
-                                        <span>{{film.text}}</span>
+                                        <span class="cursor-pointer">{{film.text}}</span>
 
                                         <div class="buttons">
+
                                             <!-- Bottone che sottolinea i film già visti -->
                                             <button class="btn btn-sm" :class="film.done == true ? 'bg-danger' : 'bg-success'" @click="film.done = !film.done">
                                                 <i :class="film.done == true ? 'fas fa-times' : 'fas fa-check'"></i>
                                             </button>
+
+                                            <!-- Bottone che rimuove un film dalla lista -->
                                             <button class="btn btn-sm btn-danger ms-2" @click="removeFilm(index)">
                                                 <i class="fas fa-trash"></i>
                                             </button>
@@ -56,8 +59,14 @@
 
                                     </div>
                                 </li>
-
                             </ul>
+
+                            <!-- Input che aggiunge un film alla lista -->
+                            <div class="d-flex p-5">
+                                <input type="text" v-model="add_film" placeholder="Aggiungi il titolo di un film alla lista" class="form-control-sm w-100">
+                                <button class="btn btn-sm btn-success ms-2" @click="addNewFilm">Aggiungi</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>

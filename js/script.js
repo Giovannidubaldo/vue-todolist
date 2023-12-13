@@ -4,6 +4,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            add_film: '',
             todo_list: [
                 {
                     text: 'Iron Man',
@@ -38,7 +39,15 @@ createApp({
     },
     methods: {
         removeFilm(index){
-            this.todo_list.splice(index,1)
+            this.todo_list.splice(index,1);
+        },
+        addNewFilm(){
+            this.todo_list.push({
+                text : this.add_film,
+                done : false
+            })
+            
+            this.add_film = '';
         }
     },
 }).mount('#app')
