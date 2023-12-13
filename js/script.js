@@ -11,7 +11,7 @@ createApp({
                 },
                 {
                     text: 'Doctor Strange',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'Thor: Ragnarok',
@@ -27,7 +27,7 @@ createApp({
                 },
                 {
                     text: 'Guardiani della Galassia',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'Avengers: Endgame',

@@ -26,3 +26,8 @@ main{
     margin: 50px auto;
     border-radius: 10px;
 }
+
+li{
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+}

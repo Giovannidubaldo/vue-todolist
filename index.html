@@ -32,10 +32,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="list-page">
+                        <div class="list-page p-4">
                             <h1 class="text-center">Marvel</h1>
-                            <ul class="list-unstyled">
-                                <li v-for="(film, index) in todo_list" :key="index">{{film.text}}</li>
+                            <ul class="list-unstyled px-4">
+                                <li v-for="(film, index) in todo_list" :key="index" :class="film.done == true ? 'text-decoration-line-through' : ''">
+                                    <span>{{film.text}}</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
