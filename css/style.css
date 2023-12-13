@@ -3,3 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Header */
+
+header{
+    height: 75px;
+    background-color: rgb(25, 220, 11);
+}
+
+img{
+    height: 50px;
+}
+
+/* Main */
+main{
+    background-color: green;
+    height: calc(100vh - 75px);
+}
+
+.list-page{
+    background-color: lightgray;
+    margin: 50px auto;
+    border-radius: 10px;
+}
