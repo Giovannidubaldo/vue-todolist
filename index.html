@@ -41,7 +41,7 @@
                                 <!-- Ciclo l'array di oggetti per stampare la lista -->
                                 <li v-for="(film, index) in todo_list" :key="index" :class="film.done == true ? 'text-decoration-line-through text-danger' : ''">
                                     <div class="d-flex justify-content-between">
-                                        <span class="cursor-pointer">{{film.text}}</span>
+                                        <span class="cursor-pointer" @click="film.done = !film.done">{{film.text}}</span>
 
                                         <div class="buttons">
 
@@ -63,7 +63,7 @@
 
                             <!-- Input che aggiunge un film alla lista -->
                             <div class="d-flex p-5">
-                                <input type="text" v-model="add_film" placeholder="Aggiungi il titolo di un film alla lista" class="form-control-sm w-100">
+                                <input type="text" v-model="add_film" placeholder="Aggiungi il titolo di un film alla lista" class="form-control-sm w-100" @keyup.enter="addNewFilm">
                                 <button class="btn btn-sm btn-success ms-2" @click="addNewFilm">Aggiungi</button>
                             </div>
 
