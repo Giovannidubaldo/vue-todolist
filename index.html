@@ -35,8 +35,13 @@
                         <div class="list-page p-4">
                             <h1 class="text-center">Marvel</h1>
                             <ul class="list-unstyled px-4">
-                                <li v-for="(film, index) in todo_list" :key="index" :class="film.done == true ? 'text-decoration-line-through' : ''">
-                                    <span>{{film.text}}</span>
+                                <li v-for="(film, index) in todo_list" :key="index" :class="film.done == true ? 'text-decoration-line-through text-danger' : ''">
+                                    <div class="d-flex justify-content-between">
+                                        <span>{{film.text}}</span>
+                                        <button class="btn btn-sm" :class="film.done == true ? 'bg-danger' : 'bg-success'" @click="film.done = !film.done">
+                                            <i :class="film.done == true ? 'fas fa-times' : 'fas fa-check'"></i>
+                                        </button>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
