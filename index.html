@@ -33,16 +33,30 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="list-page p-4">
+
+                            <!-- Titolo della lista -->
                             <h1 class="text-center">Marvel</h1>
                             <ul class="list-unstyled px-4">
+
+                                <!-- Ciclo l'array di oggetti per stampare la lista -->
                                 <li v-for="(film, index) in todo_list" :key="index" :class="film.done == true ? 'text-decoration-line-through text-danger' : ''">
                                     <div class="d-flex justify-content-between">
                                         <span>{{film.text}}</span>
-                                        <button class="btn btn-sm" :class="film.done == true ? 'bg-danger' : 'bg-success'" @click="film.done = !film.done">
-                                            <i :class="film.done == true ? 'fas fa-times' : 'fas fa-check'"></i>
-                                        </button>
+
+                                        <div class="buttons">
+                                            <!-- Bottone che sottolinea i film già visti -->
+                                            <button class="btn btn-sm" :class="film.done == true ? 'bg-danger' : 'bg-success'" @click="film.done = !film.done">
+                                                <i :class="film.done == true ? 'fas fa-times' : 'fas fa-check'"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger ms-2" @click="removeFilm(index)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+
+
                                     </div>
                                 </li>
+
                             </ul>
                         </div>
                     </div>

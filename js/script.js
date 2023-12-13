@@ -37,6 +37,8 @@ createApp({
         }
     },
     methods: {
-        
+        removeFilm(index){
+            this.todo_list.splice(index,1)
+        }
     },
 }).mount('#app')
